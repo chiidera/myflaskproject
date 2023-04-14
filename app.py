@@ -75,9 +75,16 @@ we an dynamically use only one app route that takes a variable and render it on 
 #     return render_template('components.html')
 
 '''this is the concise way of writing urls'''
+@app.route('/')
+def home():
+    return render_template('index.html')
+
+
+
 @app.route('/<string:page_name>')
 def change(page_name):
     return render_template(page_name)
+
 
 
 #  getting data from user, writing it to a file and redirecting a thank you html page to the user
